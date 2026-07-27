@@ -314,7 +314,68 @@
                 </div>
                 <div class="glass-card bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-300 dark:border-slate-700">
                     <div class="chart-container relative" style="height: 300px;">
-                        <canvas id="gradeChart"></canvas>
+                        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" role="img" aria-label="Illustration of a voyage from Achieved, through Merit, to Excellence at Ithaca">
+                            <defs>
+                                <linearGradient id="seaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#001033"/>
+                                    <stop offset="100%" stop-color="#0a3d91"/>
+                                </linearGradient>
+                                <linearGradient id="ithacaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#f3d98a"/>
+                                    <stop offset="100%" stop-color="#c5a059"/>
+                                </linearGradient>
+                            </defs>
+
+                            <rect x="0" y="0" width="600" height="300" rx="14" fill="url(#seaGrad)"/>
+
+                            <path d="M0,60 Q50,50 100,60 T200,60 T300,60 T400,60 T500,60 T600,60" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" fill="none"/>
+                            <path d="M0,120 Q50,112 100,120 T200,120 T300,120 T400,120 T500,120 T600,120" stroke="#ffffff" stroke-opacity="0.06" stroke-width="2" fill="none"/>
+                            <path d="M0,205 Q50,196 100,205 T200,205 T300,205 T400,205 T500,205 T600,205" stroke="#ffffff" stroke-opacity="0.06" stroke-width="2" fill="none"/>
+                            <path d="M0,255 Q50,247 100,255 T200,255 T300,255 T400,255 T500,255 T600,255" stroke="#ffffff" stroke-opacity="0.05" stroke-width="2" fill="none"/>
+
+                            <path d="M90,222 Q220,244 300,152 T520,92" stroke="#c5a059" stroke-width="3" stroke-dasharray="8,7" fill="none" stroke-linecap="round" opacity="0.85"/>
+
+                            <!-- Ship, mid-voyage -->
+                            <g transform="translate(202,197) rotate(-18)">
+                                <path d="M-16,0 L16,0 L10,10 L-10,10 Z" fill="#f8fafc"/>
+                                <line x1="0" y1="0" x2="0" y2="-22" stroke="#f8fafc" stroke-width="2"/>
+                                <path d="M0,-20 L14,-4 L0,-4 Z" fill="#f8fafc"/>
+                            </g>
+
+                            <!-- Stop 1: Achieved -->
+                            <g transform="translate(90,222)">
+                                <ellipse cx="0" cy="12" rx="34" ry="13" fill="#94a3b8" opacity="0.9"/>
+                                <circle cx="0" cy="0" r="20" fill="#cbd5e1"/>
+                                <text x="0" y="-32" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700" font-family="'Space Grotesk', sans-serif">ACHIEVED</text>
+                                <text x="0" y="46" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="'Manrope', sans-serif">Methodical Examination</text>
+                            </g>
+
+                            <!-- Stop 2: Merit -->
+                            <g transform="translate(300,152)">
+                                <ellipse cx="0" cy="13" rx="42" ry="15" fill="#60a5fa" opacity="0.9"/>
+                                <circle cx="0" cy="0" r="24" fill="#93c5fd"/>
+                                <text x="0" y="-36" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="'Space Grotesk', sans-serif">MERIT</text>
+                                <text x="0" y="50" text-anchor="middle" fill="#dbeafe" font-size="10" font-family="'Manrope', sans-serif">In-Depth Analysis</text>
+                            </g>
+
+                            <!-- Stop 3: Excellence — Ithaca, journey's end -->
+                            <g transform="translate(516,92)">
+                                <ellipse cx="0" cy="15" rx="52" ry="18" fill="url(#ithacaGrad)"/>
+                                <circle cx="0" cy="0" r="28" fill="#f3d98a"/>
+                                <g transform="translate(-10,-11)">
+                                    <polygon points="-1,0 21,0 10,-8" fill="#8b6508"/>
+                                    <rect x="0" y="0" width="20" height="2.5" fill="#8b6508"/>
+                                    <rect x="1" y="2.5" width="2.4" height="7" fill="#8b6508"/>
+                                    <rect x="6" y="2.5" width="2.4" height="7" fill="#8b6508"/>
+                                    <rect x="11.2" y="2.5" width="2.4" height="7" fill="#8b6508"/>
+                                    <rect x="16.4" y="2.5" width="2.4" height="7" fill="#8b6508"/>
+                                    <rect x="0" y="9.5" width="20" height="2.5" fill="#8b6508"/>
+                                </g>
+                                <text x="0" y="-42" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="800" font-family="'Space Grotesk', sans-serif">EXCELLENCE</text>
+                                <text x="0" y="54" text-anchor="middle" fill="#fde68a" font-size="10" font-family="'Manrope', sans-serif">Perceptive Analysis</text>
+                                <text x="0" y="67" text-anchor="middle" fill="#fde68a" font-size="9" font-style="italic" font-family="'Manrope', sans-serif">— Ithaca, journey's end —</text>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -772,9 +833,12 @@
                     </div>
 
                     <h2 class="text-3xl font-extrabold mb-6 text-whs-dark dark:text-whs-light mt-12">Dynamic Essay Planner (Excellence Toolkit)</h2>
-                    <div class="glass-card bg-slate-50 dark:bg-slate-900/50 rounded-xl shadow-sm border border-slate-300 dark:border-slate-700 p-6 mb-8">
-                        <label for="essay-question-select" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Select an Exam Question Type to generate a custom essay plan:</label>
-                        <select id="essay-question-select" onchange="updateEssayPlan()" class="w-full p-3 border border-slate-300 dark:border-slate-600 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold focus:ring-2 focus:ring-whs-dark outline-none cursor-pointer">
+                    <div class="glass-card bg-amber-50 dark:bg-amber-900/20 rounded-xl shadow-md border-2 border-whs-gold p-6 mb-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl shrink-0">🧭</span>
+                            <label for="essay-question-select" class="block text-lg font-extrabold text-whs-dark dark:text-whs-light">Select an Exam Question Type to Generate a Custom Essay Plan</label>
+                        </div>
+                        <select id="essay-question-select" onchange="updateEssayPlan()" class="w-full p-4 border-2 border-whs-gold rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg shadow-sm focus:ring-2 focus:ring-whs-dark outline-none cursor-pointer">
                             <option value="leadership">Leadership &amp; Power (Odysseus's leadership)</option>
                             <option value="xenia">Tradition &amp; Social Order (Xenia, Oikos)</option>
                             <option value="divine">Religious Belief (Fate, Divine Intervention, Hubris)</option>
@@ -783,7 +847,7 @@
                             <option value="revenge">Revenge &amp; Justice (The Mnesterophonia)</option>
                             <option value="community">The Individual vs Community (Kleos vs Crew)</option>
                         </select>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 italic">This plan automatically adjusts its depth to match your current level (Level 2 = explain how a value is shown; Level 3 = evaluate the tension between values).</p>
+                        <p class="text-xs text-whs-goldtext dark:text-whs-gold mt-3 italic font-semibold">This plan automatically adjusts its depth to match your current level (Level 2 = explain how a value is shown; Level 3 = evaluate the tension between values).</p>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
@@ -1773,35 +1837,7 @@
         }
 
         // --- Chart & Exam Deconstructor ---
-        function initCharts() {
-            const canvas = document.getElementById('gradeChart');
-            if (!canvas) return;
-            const ctx = canvas.getContext && canvas.getContext('2d');
-            if (!ctx) return;
-            const isDark = document.documentElement.classList.contains('dark');
-            const textColor = isDark ? '#cbd5e1' : '#475569';
-            try {
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Examination Depth', 'Evidence Use', 'Contextual Integration', 'Complexity'],
-                        datasets: [
-                            { label: 'Achievement', data: [40, 30, 20, 10], backgroundColor: '#94a3b8' },
-                            { label: 'Excellence', data: [95, 90, 85, 98], backgroundColor: '#c5a059' }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: { beginAtZero: true, max: 100, ticks: { display: false }, grid: { color: isDark ? '#334155' : '#e2e8f0' } },
-                            x: { ticks: { color: textColor }, grid: { display: false } }
-                        },
-                        plugins: { legend: { position: 'bottom', labels: { color: textColor } } }
-                    }
-                });
-            } catch (e) { console.error("Grade chart failed to render", e); }
-        }
+        // --- Exam Deconstructor ---
 
         function revealStrategy() {
             document.getElementById('strategy-reveal').classList.toggle('hidden');
@@ -2575,7 +2611,6 @@
             try { initGamification(); } catch (e) { console.error("Gamification init failed", e); }
             try { initScrollProgress(); } catch (e) { console.error("Scroll progress init failed", e); }
             try { initDarkMode(); } catch (e) { console.error("Dark mode init failed", e); }
-            try { initCharts(); } catch (e) { console.error("Chart init failed", e); }
             try { filterLexicon(); } catch (e) { console.error("Lexicon init failed", e); }
             try { populateEpisodes(); initEpisodeChips(); filterEpisodes(); } catch (e) { console.error("Evidence Vault init failed", e); }
             try { updateEssayPlan(); } catch (e) { console.error("Essay plan init failed", e); }
